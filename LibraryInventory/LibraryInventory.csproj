@@ -281,6 +281,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\LibraryContext.cs" />
     <Compile Include="Data\Repository.cs" />

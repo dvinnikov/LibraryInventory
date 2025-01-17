@@ -37,6 +37,5 @@ namespace LibraryInventory.UI
                 Response.Redirect($"DeleteBook.aspx?id={e.CommandArgument}");
             }
         }
-
     }
 }

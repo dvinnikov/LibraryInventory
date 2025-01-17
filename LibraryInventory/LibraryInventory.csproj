@@ -259,6 +259,8 @@
     <Content Include="UI\AddBook.aspx" />
     <Content Include="UI\AddCategory.aspx" />
     <Content Include="UI\CategoryList.aspx" />
+    <Content Include="UI\DeleteBook.aspx" />
+    <Content Include="UI\EditBook.aspx" />
     <Content Include="UI\Home.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -343,6 +345,20 @@
     </Compile>
     <Compile Include="UI\CategoryList.aspx.designer.cs">
       <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeleteBook.aspx.cs">
+      <DependentUpon>DeleteBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DeleteBook.aspx.designer.cs">
+      <DependentUpon>DeleteBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditBook.aspx.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EditBook.aspx.designer.cs">
+      <DependentUpon>EditBook.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

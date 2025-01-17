@@ -7,18 +7,18 @@ namespace LibraryInventory.Controllers
     [RoutePrefix("api/categories")]
     public class CategoriesController : ApiController
     {
-        private readonly IRepository<Category> _repository;
+        private readonly ICategoryRepository _repository;
 
-        public CategoriesController(IRepository<Category> repository)
+        public CategoriesController(ICategoryRepository repository)
         {
             _repository = repository;
         }
 
         [HttpGet]
-        [Route("")]
-        public IHttpActionResult GetCategories()
+        [Route("paged")]
+        public IHttpActionResult GetPagedCategories(int page = 1, int pageSize = 10, string search = null, string sortColumn = "Name", string sortOrder = "ASC")
         {
-            var categories = _repository.GetAll();
+            var categories = _repository.GetPagedCategories(page, pageSize, search, sortColumn, sortOrder);
             return Ok(categories);
         }
 

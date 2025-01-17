@@ -14,6 +14,7 @@ namespace LibraryInventory.App_Start
 
             container.RegisterType<IRepository<Book>, Repository<Book>>();
             container.RegisterType<IRepository<Category>, Repository<Category>>();
+            container.RegisterType<ICategoryRepository, CategoryRepository>(); // Register the new repository
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

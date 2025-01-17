@@ -276,7 +276,9 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\LibraryContext.cs" />
+    <Compile Include="Data\Repository.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

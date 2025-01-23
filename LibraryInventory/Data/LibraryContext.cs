@@ -3,12 +3,17 @@ using System.Data.Entity;
 
 namespace LibraryInventory.Data
 {
+    /// <summary>
+    /// Represents the database context for the library system.
+    /// Manages entity sets and configures relationships between entities.
+    /// </summary>
     public class LibraryContext : DbContext
     {
-        public DbSet<Book> Books { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
         public LibraryContext() : base("name=LibraryDb") { }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

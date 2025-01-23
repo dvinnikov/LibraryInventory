@@ -289,7 +289,9 @@
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Data\CategoryRepository.cs" />
+    <Compile Include="Data\LibraryQueryExecutor.cs" />
     <Compile Include="Data\ICategoryRepository.cs" />
+    <Compile Include="Data\ILibraryQueryExecutor.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\LibraryContext.cs" />
     <Compile Include="Data\Repository.cs" />

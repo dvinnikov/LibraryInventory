@@ -1,6 +1,8 @@
 ﻿using LibraryInventory.Data;
 using LibraryInventory.Models;
+using System;
 using System.Linq;
+using System.Net;
 using System.Web.Http;
 
 namespace LibraryInventory.Controllers
@@ -26,7 +28,6 @@ namespace LibraryInventory.Controllers
                 books = books.Where(b => b.Title.Contains(search) || b.Author.Contains(search));
             }
 
-            // Apply dynamic sorting using reflection
             if (!string.IsNullOrEmpty(sortColumn))
             {
                 books = sortOrder == "asc"
@@ -34,45 +35,91 @@ namespace LibraryInventory.Controllers
                     : books.OrderByDescending(b => GetPropertyValue(b, sortColumn));
             }
 
-            var pagedBooks = books.Skip((page - 1) * pageSize).Take(pageSize);
+            // Pagination logic
+            var pagedBooks = books.Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
-            return Ok(pagedBooks);
+            // Return Ok with the paginated result
+            return Ok(pagedBooks); // Ensure this is reached
         }
-
-        private object GetPropertyValue(object obj, string propertyName)
-        {
-            return obj.GetType().GetProperty(propertyName)?.GetValue(obj, null);
-        }
-
 
 
         [HttpGet]
         [Route("{id}")]
-        public IHttpActionResult GetBook(int id) => Ok(_repository.GetById(id));
+        public IHttpActionResult GetBook(int id)
+        {
+            try
+            {
+                var book = _repository.GetById(id);
+                if (book == null)
+                    return NotFound(); // 404 Not Found
+
+                return Ok(book);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex); // 500 Internal Server Error
+            }
+        }
 
         [HttpPost]
         [Route("")]
         public IHttpActionResult AddBook([FromBody] Book book)
         {
-            _repository.Add(book);
-            return Ok();
+            if (book == null)
+                return BadRequest("Book data is required."); // 400 Bad Request
+
+            try
+            {
+                _repository.Add(book);
+                return Ok(); // 200 OK
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
         [HttpPut]
         [Route("{id}")]
         public IHttpActionResult UpdateBook(int id, [FromBody] Book book)
         {
-            book.Id = id;
-            _repository.Update(book);
-            return Ok();
+            if (book == null)
+                return BadRequest("Book data is required."); // 400 Bad Request
+
+            try
+            {
+                book.Id = id;
+                _repository.Update(book);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
 
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult DeleteBook(int id)
         {
-            _repository.Delete(id);
-            return Ok();
+            try
+            {
+                var book = _repository.GetById(id);
+                if (book == null)
+                    return NotFound(); // 404 Not Found
+
+                _repository.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+
+        private object GetPropertyValue(object obj, string propertyName)
+        {
+            return obj.GetType().GetProperty(propertyName)?.GetValue(obj, null);
         }
     }
 }

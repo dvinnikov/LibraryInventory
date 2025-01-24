@@ -96,15 +96,6 @@ namespace LibraryInventory.UI
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCategory;
 
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
         /// ButtonSave control.
         /// </summary>
         /// <remarks>
@@ -112,5 +103,14 @@ namespace LibraryInventory.UI
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonSave;
+
+        /// <summary>
+        /// BackToMenuButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BackToMenuButton;
     }
 }

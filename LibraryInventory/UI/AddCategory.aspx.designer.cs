@@ -24,6 +24,15 @@ namespace LibraryInventory.UI
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// ErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorMessage;
+
+        /// <summary>
         /// TextBoxName control.
         /// </summary>
         /// <remarks>
@@ -51,12 +60,21 @@ namespace LibraryInventory.UI
         protected global::System.Web.UI.WebControls.Button ButtonSave;
 
         /// <summary>
-        /// ErrorMessage control.
+        /// BackToMenuButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorMessage;
+        protected global::System.Web.UI.WebControls.Button BackToMenuButton;
+
+        /// <summary>
+        /// CategoryList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CategoryList;
     }
 }

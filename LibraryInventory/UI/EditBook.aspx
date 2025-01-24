@@ -17,6 +17,8 @@
             <asp:DropDownList ID="DropDownListCategory" runat="server"></asp:DropDownList><br />
             <asp:Button ID="ButtonSave" runat="server" Text="Save" OnClick="ButtonSave_Click" />
             <asp:Label ID="ErrorMessage" runat="server" ForeColor="Red"></asp:Label>
+
+            <asp:Button ID="BackToMenuButton" runat="server" Text="Back to Main Menu" PostBackUrl="Home.aspx" />
         </div>
     </form>
 </body>

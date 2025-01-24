@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Button ID="BackToMenuButton" runat="server" Text="Back to Main Menu" PostBackUrl="Home.aspx" />
             <asp:GridView ID="GridViewCategories" runat="server" AutoGenerateColumns="False" OnRowCommand="GridViewCategories_RowCommand">
             <Columns>
                 <asp:BoundField DataField="Name" HeaderText="Name" />
@@ -22,6 +23,7 @@
             </Columns>
         </asp:GridView>
         <asp:Button ID="AddButton" runat="server" Text="Add Category" PostBackUrl="AddCategory.aspx" />
+
         </div>
     </form>
 </body>

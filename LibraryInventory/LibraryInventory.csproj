@@ -309,6 +309,10 @@
     <Compile Include="Migrations\202501171631412_InitialCreate.Designer.cs">
       <DependentUpon>202501171631412_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202501240922094_InitialCreate1.cs" />
+    <Compile Include="Migrations\202501240922094_InitialCreate1.Designer.cs">
+      <DependentUpon>202501240922094_InitialCreate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Category.cs" />
@@ -421,6 +425,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202501171631412_InitialCreate.resx">
       <DependentUpon>202501171631412_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202501240922094_InitialCreate1.resx">
+      <DependentUpon>202501240922094_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
